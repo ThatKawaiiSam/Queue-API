@@ -3,6 +3,7 @@ package io.github.thatkawaiisam.queue.api;
 public enum QueueAction {
 
     LIST_QUEUES,
+    SET_PAUSED_STATE,
     SET_QUEUE_STATE,
     CLEAR_QUEUE,
     CONFIRM_CLEAR_QUEUE,

@@ -3,6 +3,7 @@ package io.github.thatkawaiisam.queue.api;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Iterator;
 import java.util.PriorityQueue;
 import java.util.UUID;
 
@@ -10,7 +11,9 @@ import java.util.UUID;
 public class Queue {
 
     private String id;
+    private String displayName;
     private boolean enabled = true;
+    private boolean paused = false;
     private boolean allowDecay = true;
     private PriorityQueue<QueueEntry> players = new PriorityQueue<>();
 
@@ -91,7 +94,7 @@ public class Queue {
      * @param queueEntry to be removed
      */
     public void removePlayer(QueueEntry queueEntry) {
-        getPlayers().remove(queueEntry);
+        removePlayer(queueEntry.getUuid());
     }
 
     /**
